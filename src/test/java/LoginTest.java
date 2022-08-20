@@ -7,4 +7,10 @@ public class LoginTest extends BaseTest {
     public void shouldLoginSuccessfully(String username, String password) {
         loginPage.login(username, password);
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "data/invalid-login-data.csv")
+    public void shouldNotLoginWithInvalidCredentials(String username, String password) {
+        loginPage.login(username, password);
+    }
 }
