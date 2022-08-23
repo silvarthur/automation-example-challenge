@@ -7,6 +7,7 @@ public class LoginPage extends BasePage {
     private By fieldUsername = By.name("username");
     private By fieldPassword = By.name("password");
     private By buttonLogin = By.id("btnLogin");
+    private By messageLoginError = By.cssSelector(".alert.alert-danger");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -17,5 +18,9 @@ public class LoginPage extends BasePage {
         sendKeysToAnElement(fieldUsername, username);
         sendKeysToAnElement(fieldPassword, password);
         clickOnAnElement(buttonLogin);
+    }
+
+    public String getErrorMessage() {
+        return getElementText(messageLoginError);
     }
 }
