@@ -16,19 +16,19 @@ public class InvoiceTest extends BaseTest {
 
         invoiceListPage.clickOnInvoiceDetailsButton(0);
 
-        assertTrue(invoiceDetailsPage.getElementByText(hostelName).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(invoiceDate).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(dueDate).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(invoiceNumber).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(bookingCode).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(customerDetails).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(room).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(checkIn).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(checkOut).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(totalStayCount).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(totalStayAmount).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(depositNow).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(taxAndVat).isDisplayed());
-        assertTrue(invoiceDetailsPage.getElementByText(totalAmount).isDisplayed());
+        assertTrue(invoiceDetailsPage.validateFieldHostelName(hostelName));
+        assertTrue(invoiceDetailsPage.validateInvoiceDate(invoiceDate));
+        assertTrue(invoiceDetailsPage.validateDueDate(dueDate));
+        assertTrue(invoiceDetailsPage.validateFieldInvoiceNumber(invoiceNumber));
+        assertTrue(invoiceDetailsPage.validateBookingCode(bookingCode));
+        assertTrue(invoiceDetailsPage.validateRoom(room));
+        assertTrue(invoiceDetailsPage.validateTotalStayCount(totalStayCount));
+        assertTrue(invoiceDetailsPage.validateTotalStayAmount(totalStayAmount));
+        assertTrue(invoiceDetailsPage.validateCheckIn(checkIn));
+        assertTrue(invoiceDetailsPage.validateCheckOut(checkOut));
+        assertTrue(invoiceDetailsPage.validateCustomerDetails(customerDetails));
+        assertTrue(invoiceDetailsPage.validateDepositNow(depositNow));
+        assertTrue(invoiceDetailsPage.validateTaxAndVat(taxAndVat));
+        assertTrue(invoiceDetailsPage.validateTotalAmount(totalAmount));
     }
 }
