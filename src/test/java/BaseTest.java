@@ -6,10 +6,11 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
-    private static ChromeDriver driver;
+    private static WebDriver driver;
     protected static LoginPage loginPage;
     protected static InvoiceListPage invoiceListPage;
     protected static InvoiceDetailsPage invoiceDetailsPage;
@@ -31,14 +32,11 @@ public class BaseTest {
 
     @AfterEach
     public void tearDown() {
-        for(String windowHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(windowHandle);
-            driver.close();
-        };
+        driver.manage().deleteAllCookies();
     }
 
     @AfterAll
-    public static  void tearDownAll() {
+    public static void tearDownAll() {
         driver.quit();
     }
 }
