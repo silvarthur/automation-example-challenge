@@ -18,7 +18,7 @@ public class BasePage {
         this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(15));
     }
 
-    public WebElement getElement(By by) {
+    protected WebElement getElement(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 
         WebElement element = driver.findElement(by);
@@ -28,25 +28,19 @@ public class BasePage {
         return element;
     }
 
-    public List<WebElement> getElements(By by) {
+    protected List<WebElement> getElements(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return driver.findElements(by);
     }
 
-    public String getElementText(By by) {
+    protected String getElementText(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        return driver.findElement(by).getText();
-    }
 
-    public WebElement getElementByText(String text) {
-        By by = By.xpath(String.format("//*[contains(text(), %s)]", text));
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         WebElement element = driver.findElement(by);
 
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", element);
 
-        return element;
+        return element.getText();
     }
 
     protected void sendKeysToAnElement(By by, String input) {

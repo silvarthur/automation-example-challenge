@@ -24,58 +24,86 @@ public class InvoiceDetailsPage extends BasePage {
     }
 
     public boolean validateFieldHostelName(String expectedHostelName) {
-        return driver.findElement(fieldHostelName).getText().equals(expectedHostelName);
+        String elementText = getElementText(fieldHostelName);
+
+        return elementText.equals(expectedHostelName);
     }
 
     public boolean validateFieldInvoiceNumber(String expectedInvoiceNumber) {
-        return driver.findElement(fieldInvoiceNumber).getText().contains(expectedInvoiceNumber);
+        String elementText = getElementText(fieldInvoiceNumber);
+
+        return elementText.contains(expectedInvoiceNumber);
     }
 
     public boolean validateInvoiceDate(String expectedInvoiceDate) {
-        return driver.findElement(fieldInvoiceDate).getText().contains(expectedInvoiceDate);
+        String elementText = getElementText(fieldInvoiceDate);
+
+        return elementText.contains(expectedInvoiceDate);
     }
 
     public boolean validateDueDate(String expectedDueDate) {
-        return driver.findElement(fieldDueDate).getText().contains(expectedDueDate);
+        String elementText = getElementText(fieldDueDate);
+
+        return elementText.contains(expectedDueDate);
     }
 
     public boolean validateBookingCode(String expectedBookingCode) {
-        return driver.findElement(fieldBookingCode).getText().equals(expectedBookingCode);
+        String elementText = getElementText(fieldBookingCode);
+
+        return elementText.equals(expectedBookingCode);
     }
 
     public boolean validateRoom(String expectedRoom) {
-        return driver.findElement(fieldRoom).getText().equals(expectedRoom);
+        String elementText = getElementText(fieldRoom);
+
+        return elementText.equals(expectedRoom);
     }
 
     public boolean validateTotalStayCount(String expectedTotalStayCount) {
-        return driver.findElement(fieldTotalStayCount).getText().equals(expectedTotalStayCount);
+        String elementText = getElementText(fieldTotalStayCount);
+
+        return elementText.equals(expectedTotalStayCount);
     }
 
     public boolean validateTotalStayAmount(String expectedTotalStayAmount) {
-        return driver.findElement(fieldTotalStayAmount).getText().equals(expectedTotalStayAmount);
+        String elementText = getElementText(fieldTotalStayAmount);
+
+        return elementText.equals(expectedTotalStayAmount);
     }
 
     public boolean validateCheckIn(String expectedCheckIn) {
-        return driver.findElement(fieldCheckIn).getText().equals(expectedCheckIn);
+        String elementText = getElementText(fieldCheckIn);
+
+        return elementText.equals(expectedCheckIn);
     }
 
     public boolean validateCheckOut(String expectedCheckOut) {
-        return driver.findElement(fieldCheckOut).getText().equals(expectedCheckOut);
+        String elementText = getElementText(fieldCheckOut);
+
+        return elementText.equals(expectedCheckOut);
     }
 
     public boolean validateCustomerDetails(String expectedCustomerDetails) {
-        return driver.findElement(fieldCustomerDetails).getText().replace('\n', ' ').equals(expectedCustomerDetails);
+        String elementText = getElementText(fieldCustomerDetails);
+
+        return elementText.replace('\n', ' ').equals(expectedCustomerDetails);
     }
 
     public boolean validateDepositNow(String expectedDepositNow) {
-        return driver.findElement(fieldDepositNow).getText().equals(expectedDepositNow);
+        String elementText = getElementText(fieldDepositNow);
+
+        return elementText.equals(expectedDepositNow);
     }
 
     public boolean validateTaxAndVat(String expectedTaxAndVat) {
-        return driver.findElement(fieldTaxAndVat).getText().equals(expectedTaxAndVat);
+        String elementText = getElementText(fieldTaxAndVat);
+
+        return elementText.equals(expectedTaxAndVat);
     }
 
     public boolean validateTotalAmount(String expectedTotalAmount) {
-        return driver.findElement(fieldTotalAmount).getText().equals(expectedTotalAmount);
+        String elementText = getElementText(fieldTotalAmount);
+
+        return elementText.equals(expectedTotalAmount);
     }
 }
