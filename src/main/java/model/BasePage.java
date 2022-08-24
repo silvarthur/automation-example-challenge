@@ -1,6 +1,7 @@
 package model;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +20,12 @@ public class BasePage {
 
     public WebElement getElement(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        return driver.findElement(by);
+
+        WebElement element = driver.findElement(by);
+
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", element);
+
+        return element;
     }
 
     public List<WebElement> getElements(By by) {
@@ -36,7 +42,11 @@ public class BasePage {
         By by = By.xpath(String.format("//*[contains(text(), %s)]", text));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        return driver.findElement(by);
+        WebElement element = driver.findElement(by);
+
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(false);", element);
+
+        return element;
     }
 
     protected void sendKeysToAnElement(By by, String input) {

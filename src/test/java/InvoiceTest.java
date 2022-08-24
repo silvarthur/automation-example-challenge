@@ -20,15 +20,15 @@ public class InvoiceTest extends BaseTest {
         assertTrue(invoiceDetailsPage.getElementByText(invoiceDate).isDisplayed());
         assertTrue(invoiceDetailsPage.getElementByText(dueDate).isDisplayed());
         assertTrue(invoiceDetailsPage.getElementByText(invoiceNumber).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(bookingCode).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(bookingCode).isDisplayed());
         // assertTrue(invoiceDetailsPage.getElementByText(customerDetails).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(room).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(checkIn).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(checkOut).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(totalStayCount).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(totalStayAmount).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(depositNow).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(taxAndVat).isDisplayed());
-        // assertTrue(invoiceDetailsPage.getElementByText(totalAmount).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(room).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(checkIn).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(checkOut).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(totalStayCount).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(totalStayAmount).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(depositNow).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(taxAndVat).isDisplayed());
+        assertTrue(invoiceDetailsPage.getElementByText(totalAmount).isDisplayed());
     }
 }
